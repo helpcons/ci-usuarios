@@ -37,7 +37,7 @@ class Clientes extends Controller
 
         $this->cliente_model->insert($dados);
 
-        return redirect()->to('/clientes/novo');
+        return redirect()->to('/clientes');
     }
 }
 

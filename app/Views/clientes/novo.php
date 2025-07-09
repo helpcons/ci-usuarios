@@ -9,8 +9,10 @@
               <div class="col-sm-6"><h3 class="mb-0">Novo Cliente</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Dashboard v3</li>
+                  <a href="/clientes" class="btn btn-success" style="margin-right: 15px;">Voltar</a>
+                  <li class="breadcrumb-item"><a href="/inicio">Início</a></li>
+                  <li class="breadcrumb-item"><a href="/clientes">Clientes</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Novo</li>
                 </ol>
               </div>
             </div>
@@ -49,7 +51,7 @@
                         <div class="card-body">
                           <div class="form-group">
                             <label for="">Telefone</label>
-                            <input type="text" class="form-control" name="telefone">
+                            <input type="tel" class="form-control" name="telefone" maxlength="15" onkeyup="handlePhone(event)">
                           </div>
                         </div>
                       </div>
@@ -82,4 +84,6 @@
           </div>
         </section>
       </main>
+
+      <script src="<?= base_url('../../theme/dist/js/scripts.js') ?>"></script>
       <!--end::App Main-->
