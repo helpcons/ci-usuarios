@@ -14,3 +14,4 @@ $routes->get('/inicio', 'Inicio::index');
 $routes->get('/clientes', 'Clientes::index');
 $routes->get('/clientes/novo', 'Clientes::novo');
 $routes->post('/clientes/store', 'Clientes::store');
+$routes->get('/clientes/editar/(:any)', 'Clientes::editar/$1');

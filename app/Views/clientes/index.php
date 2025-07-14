@@ -33,6 +33,7 @@
                                 <th>Telefone</th>
                                 <th>Endereço</th>
                                 <th>Limite de crédito</th>
+                                <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,9 @@
                                             <td><?= esc(format_telefone($cliente['telefone'])) ?></td>
                                             <td><?= esc($cliente['endereco']) ?></td>
                                             <td><?= esc($cliente['limite_de_credito']) ?></td>
+                                            <td>
+                                              <a href="/clientes/editar/<?= $cliente['id_cliente'] ?>" class="btn btn-warning">Editar</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 <?php else : ?>

@@ -31,9 +31,25 @@ class Clientes extends Controller
         echo View('templates/footer');
     }
 
+    public function editar($id_cliente)
+    {
+        $cliente = $this->cliente_model->where('id_cliente', $id_cliente)->first();
+
+        $data['cliente'] = $cliente;
+
+        echo View('templates/header');
+        echo View('clientes/editar', $data);
+        echo View('templates/footer');
+    }
+
     public function store()
     {
         $dados = $this->request->getPost();
+
+        if(isset($dados['id_cliente'])):
+            $this->cliente_model->where('id_cliente', $dados['id_cliente'])->set($dados)->update();
+            return redirect()->to("/clientes/editar/{$dados['id_cliente']}");
+        endif;
 
         $this->cliente_model->insert($dados);
 
